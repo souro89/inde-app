@@ -1,25 +1,33 @@
-console.log("App.js is running");
+let count = 0;
 
-var user = {
-  name: "Indecision App",
-  age: 21,
-  location: "cloud",
+const addOne = () => {
+  count++;
+  renderCountApp();
 };
 
-function getLocation(location) {
-  if (location) {
-    return <p>Location : {location}</p>;
-  }
-}
+const subOne = () => {
+  count--;
+  renderCountApp();
+};
 
-var template = (
-  <div>
-    <h1>{user.name ? user.name : "undefined"}</h1>
-    {user.age >= 18 && <p>Age : {user.age}</p>}
-    {getLocation(user.location)}
-  </div>
-);
+const reset = () => {
+  count = 0;
+  renderCountApp();
+};
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+const renderCountApp = () => {
+  const templateTwo = (
+    <div>
+      <h1>Count : {count} </h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={subOne}>-1</button>
+      <button onClick={reset}>reset</button>
+    </div>
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCountApp();
