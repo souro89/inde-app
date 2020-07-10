@@ -1,12 +1,15 @@
 "use strict";
 
-console.log("App.js is running");
+var multiplier = {
+  numbers: [1, 2, 3],
+  multiplyBy: 2,
+  multiply: function multiply() {
+    var _this = this;
 
-var template = React.createElement(
-  "p",
-  { id: "p1" },
-  "This is JSX app.js!"
-);
-var appRoot = document.getElementById("app");
+    return this.numbers.map(function (n) {
+      return n * _this.multiplyBy;
+    });
+  }
+};
 
-ReactDOM.render(template, appRoot);
+console.log(multiplier.multiply());
