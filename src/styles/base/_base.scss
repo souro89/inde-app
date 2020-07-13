@@ -1,7 +1,16 @@
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: helvetica, Arial, sans-serif;
+    font-family: helvetica, Arial, sans-serif;
+    background: $dark-blue;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
 }
